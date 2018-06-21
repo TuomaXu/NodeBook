@@ -956,3 +956,28 @@ export default async (req,res)=>{
 }
 ```
 
+### index.js 
+
+引入数据服务模块
+
+```
+import getMessages from './data_servers/getMessages';
+import postMessage from './data_servers/postMessage';
+import register from './data_servers/register';
+import login from './data_servers/login';
+import postComment from './data_servers/postComment';
+import allMessages from './data_servers/allMessages';
+import allComments from './data_servers/allComments';
+```
+
+//配置请求路由
+
+```
+app.get('/api/getMessages',getMessages);
+app.post('/api/postMessage',postMessage);
+app.post('/api/register',register);
+app.post('/api/login',login);
+app.post('/api/postComment',postComment);
+app.post('/api/allMessages',allMessages);
+app.post('/api/allComments',allComments);
+```
